@@ -25,21 +25,20 @@ def main_ui():
     if option == 'Intro':
         st.subheader('Introduction')
         st.write("Hi there!")
-        st.write("Welcome to my webpage dedicated to my project on Rydberg atom array quantum computers and simulators")
+        st.write("Welcome to my webpage dedicated to my project on Rydberg atom array quantum computers and simulators.")
 
         st.write("Feel free to explore different aspects of my project using the sidebar. I will regularly update "
-                 "these sections as I make progress, with further subsections for each aspect")
+                 "these sections as I make progress, with further subsections for each aspect.")
 
         st.write("I'll also keep the Teams chat updated with relevant plots and results to complement the webpage "
                  "content.")
 
         st.write("If you encounter any issues with the webpage or have suggestions on how to improve the organization "
                  "and presentation of my work, please don't hesitate to reach out to me via email at "
-                 "oliver.l.lind@durham.ac.uk or through teams")
+                 "oliver.l.lind@durham.ac.uk.")
 
         st.write("The code for the project can be accessed through my GitHub via the link: "
-                 "https://github.com/oliverlind/RydbergQubit. Bear in my the code is an ongoing process so will be a "
-                 "bit messy at points.")
+                 "https://github.com/oliverlind/RydbergQubit.")
 
     if option == 'Code':
         st.subheader("Code set up")
@@ -62,8 +61,31 @@ def main_ui():
         st.write("• Zero Detuning: Hamiltonian is evolved with zero detuning.")
 
     if option == 'Plots':
-        image = Image.open('Plots/Figure_1.png')
-        st.image(image)
+        types = st.selectbox('Select Type', ['Constant Zero Detunning'])
+
+        if types == 'Constant Zero Detunning':
+
+            st.write("Below you will find plots illustrating the behaviour of 1D atom arrays being driven by an "
+                     "oscillatory field at the Rabi frequency (Energy difference between ground and Rydberg state)")
+
+            st.subheader('3 Atom Chain')
+
+            st.write("The initial case we explore is that of no Van Der Wals interaction between the atoms (V=0). As "
+                     "expected, each individual atoms Rydberg Fidelity (probability of being in the Rydberg state) "
+                     "oscillates at the Rabi frequency. ")
+
+            image = Image.open('Plots/Rabi Oscillations/n=3/Rabi_Osc_No_Int.png')
+            st.image(image)
+
+            st.write("Next, we turn on the interaction such that the second atom lies within the Blockade radius of "
+                     "the first and third atom. Note: ‘a’ here is the uniform separation of the atoms an ‘R_b’ is the "
+                     "blockade radius.")
+
+            image = Image.open('Plots/Rabi Oscillations/n=3/Rabi_Osc_NN.png')
+            st.image(image)
+
+            image = Image.open('Plots/Rabi Oscillations/n=3/Rabi_Osc_NN_line.png')
+            st.image(image)
 
 
 if __name__ == "__main__":
