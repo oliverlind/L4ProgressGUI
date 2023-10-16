@@ -66,13 +66,13 @@ def main_ui():
 
         if types == 'Constant Zero Detunning':
             st.write("Below you will find plots illustrating the behaviour of 1D atom arrays being driven by an "
-                     "oscillatory field at the Rabi frequency (Energy difference between ground and Rydberg state)")
+                     "oscillatory field at the Rabi frequency Ω = 4 (2πxMHz).")
 
             st.subheader('3 Atom Chain')
 
             st.write("The initial case we explore is that of no Van Der Wals interaction between the atoms (V=0). As "
                      "expected, each individual atoms Rydberg Fidelity (probability of being in the Rydberg state) "
-                     "oscillates at the Rabi frequency. ")
+                     "oscillates at the rabi frequency Ω = 4 (2πxMHz); time period T = 0.25 μs")
 
             centre_image('Plots/Rabi Oscillations/n=3/Rabi_Osc_No_Int.png')
 
@@ -89,7 +89,6 @@ def main_ui():
             centre_image('Plots/Rabi Oscillations/n=3/Rabi_Osc_NN_line_t=12.png')
 
         if types == 'Z3 Configuration':
-
             centre_image('Plots/n=7.png')
 
 
