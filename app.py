@@ -62,7 +62,7 @@ def main_ui():
         # st.write("• Zero Detuning: Hamiltonian is evolved with zero detuning.")
 
     if option == 'Plots':
-        types = st.selectbox('Select Type', ['Constant Zero Detunning'])
+        types = st.selectbox('Select Type', ['Constant Zero Detunning', 'Z3 Configuration', 'Energy Eigenvalues'])
 
         if types == 'Constant Zero Detunning':
             st.write("Below you will find plots illustrating the behaviour of 1D atom arrays being driven by an "
@@ -87,6 +87,10 @@ def main_ui():
             st.write("Now if we increase the time we evolve the system to 12 μs we get interesting plot:")
 
             centre_image('Plots/Rabi Oscillations/n=3/Rabi_Osc_NN_line_t=12.png')
+
+        if types == 'Z3 Configuration':
+
+            centre_image('Plots/n=7.png')
 
 
 def centre_image(path):
