@@ -72,7 +72,7 @@ def main_ui():
 
             st.write("The initial case we explore is that of no Van Der Wals interaction between the atoms (V=0). As "
                      "expected, each individual atoms Rydberg Fidelity (probability of being in the Rydberg state) "
-                     "oscillates at the rabi frequency Ω = 4 (2πxMHz); time period T = 0.25 μs")
+                     "oscillates at the rabi frequency Ω = 4 (MHz); time period T = 0.25 μs")
 
             centre_image('Plots/Rabi Oscillations/n=3/Rabi_Osc_No_Int.png')
 
