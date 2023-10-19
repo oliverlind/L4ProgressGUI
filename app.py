@@ -20,7 +20,7 @@ def main_ui():
     st.title('Oliver Lind Level 4 Project')
 
     with st.sidebar:
-        option = st.selectbox('Select Option', ['Intro', 'Code', 'Plots', 'Papers'], )
+        option = st.selectbox('Select Option', ['Intro', 'Plots', 'Code', 'Papers'], )
 
     if option == 'Intro':
         st.subheader('Introduction')
@@ -62,7 +62,7 @@ def main_ui():
         # st.write("• Zero Detuning: Hamiltonian is evolved with zero detuning.")
 
     if option == 'Plots':
-        types = st.selectbox('Select Type', ['Constant Zero Detunning', 'Z3 Configuration', 'Energy Eigenvalues'])
+        types = st.selectbox('Select Type', ['Constant Zero Detunning', 'Linear Detuning Increase', 'Z3 Configuration'])
 
         if types == 'Constant Zero Detunning':
             st.write("Below you will find plots illustrating the behaviour of 1D atom arrays being driven by an "
@@ -87,6 +87,9 @@ def main_ui():
             st.write("Now if we increase the time we evolve the system to 12 μs we get interesting plot:")
 
             centre_image('Plots/Rabi Oscillations/n=3/Rabi_Osc_NN_line_t=12.png')
+
+        if types == 'Linear Detuning Increase':
+            centre_image('Plots/Energy Eigenvalues/two_atom_large_linear_detunning_increase.png')
 
         if types == 'Z3 Configuration':
             centre_image('Plots/n=7.png')
