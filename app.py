@@ -63,7 +63,7 @@ def main_ui():
         # st.write("• Zero Detuning: Hamiltonian is evolved with zero detuning.")
 
     if option == 'Plots':
-        types = st.selectbox('Select Type', ['Constant Zero Detunning', 'Linear Detuning Increase', 'Z3 Configuration'])
+        types = st.selectbox('Select Type', ['Constant Zero Detunning', 'Linear Detuning Increase', 'Quench', 'Z3 Configuration'])
 
         plots.plots(types)
 

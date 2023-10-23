@@ -35,9 +35,21 @@ def plots(types):
     if types == 'Z3 Configuration':
         layout_tools.centre_image('Plots/n=7.png')
 
+    if types == 'Quenches':
+        pass
+
 
 def linear_detunning_increase():
     st.subheader('One Atom')
 
     st.subheader('Two Atoms')
-    layout_tools.centre_image('Plots/Energy Eigenvalues/two_atom_large_linear_detunning_increase.png')
+    layout_tools.centre_image('Plots/Linear detunning increase/n=2/energy_eigenspectra.png')
+    layout_tools.centre_image('Plots/Linear detunning increase/n=2/eigenstates_density_matrices.png')
+
+    col1, col2 = st.columns([1,1])
+
+    # with col1:
+    #     st.image('Plots/Linear detunning increase/n=2/energy_eigenspectra.png')
+    #
+    # with col2:
+    #     st.image('Plots/Linear detunning increase/n=2/eigenstates_density_matrices.png')
