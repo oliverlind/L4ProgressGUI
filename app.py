@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 
 import plots
+import diary
 
 def main_ui():
     """
@@ -21,7 +22,7 @@ def main_ui():
     st.title('Oliver Lind Level 4 Project')
 
     with st.sidebar:
-        option = st.selectbox('Select Option', ['Intro', 'Plots', 'Code', 'Papers'], )
+        option = st.selectbox('Select Option', ['Intro', 'Diary', 'Plots', 'Code', 'Papers'], )
 
     if option == 'Intro':
         st.subheader('Introduction')
@@ -62,10 +63,19 @@ def main_ui():
         #
         # st.write("• Zero Detuning: Hamiltonian is evolved with zero detuning.")
 
+    if option == 'Diary':
+        week = st.selectbox('Select Week', ['Week 8', 'Week 9'], key='Weeks')
+
+        diary.diary(week)
+
+
+
     if option == 'Plots':
-        types = st.selectbox('Select Type', ['Constant Zero Detunning', 'Linear Detuning Increase', 'Quench', 'Z3 Configuration'])
+        types = st.selectbox('Select Type', ['Constant Zero Detunning', 'Two atom System', 'Quench'])
 
         plots.plots(types)
+
+
 
 
 

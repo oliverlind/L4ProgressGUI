@@ -28,7 +28,7 @@ def plots(types):
 
         layout_tools.centre_image('Plots/Rabi Oscillations/n=3/Rabi_Osc_NN_line_t=12.png')
 
-    if types == 'Linear Detuning Increase':
+    if types == 'Two Atom System':
         linear_detunning_increase()
 
 
