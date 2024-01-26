@@ -22,19 +22,20 @@ def main_ui():
     st.title('Oliver Lind Level 4 Project')
 
     with st.sidebar:
-        option = st.selectbox('Select Option', ['Intro', 'Diary', 'Plots', 'Code', 'Papers'], )
+        option = st.selectbox('Select Option', ['Intro', 'Diary', 'Code', 'Papers'], )
 
     if option == 'Intro':
         st.subheader('Introduction')
         st.write("Hi there!")
         st.write(
-            "Welcome to my webpage dedicated to my project on Rydberg atom array quantum computers and simulators.")
+            "Welcome to my webpage dedicated to my project on Rydberg atom array quantum simulators.")
 
-        st.write("Feel free to explore different aspects of my project using the sidebar. I will regularly update "
-                 "these sections as I make progress, with further subsections for each aspect.")
+        st.write("Feel free to explore different aspects of my project using the sidebar. I will update "
+                 "these sections as I progress and reflect on different aspects of the project.")
 
-        st.write("I'll also keep the Teams chat updated with relevant plots and results to complement the webpage "
-                 "content.")
+        st.write("Much of the work done in the first term in outline in the group teams chat 'QSIM'. In term two, "
+                 "as Tom (other project student) and I's projects diverge, I will add to this webpage with reflections "
+                 "on the project and future plans")
 
         st.write("If you encounter any issues with the webpage or have suggestions on how to improve the organization "
                  "and presentation of my work, please don't hesitate to reach out to me via email at "
@@ -64,16 +65,16 @@ def main_ui():
         # st.write("• Zero Detuning: Hamiltonian is evolved with zero detuning.")
 
     if option == 'Diary':
-        week = st.selectbox('Select Week', ['Week 8', 'Week 9'], key='Weeks')
+        week = st.selectbox('Select Week', ['Week 8', 'Week 9', 'Week 10', 'Week 11', 'Week 12'], key='Weeks')
 
         diary.diary(week)
 
 
 
-    if option == 'Plots':
-        types = st.selectbox('Select Type', ['Constant Zero Detunning', 'Two atom System', 'Quench'])
-
-        plots.plots(types)
+    # if option == 'Plots':
+    #     types = st.selectbox('Select Type', ['Constant Zero Detunning', 'Two atom System', 'Quench'])
+    #
+    #     plots.plots(types)
 
 
 
