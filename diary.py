@@ -3,6 +3,9 @@ import layout_tools
 
 def diary(week):
 
+    if week == 'Week 1-7':
+        st.write('See joint group QSim teams for progress and reflections')
+
     if week == 'Week 8':
 
         st.write('Alongside investigating further, the dynamics of the local quench, this week I had a look at some '
