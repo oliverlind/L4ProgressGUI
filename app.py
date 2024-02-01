@@ -67,7 +67,7 @@ def main_ui():
         # st.write("• Zero Detuning: Hamiltonian is evolved with zero detuning.")
 
     if option == 'Diary':
-        week = st.selectbox('Select Week', ['Week 1-7', 'Week 8', 'Week 9', 'Week 10', 'Week 11', 'Week 12'], key='Weeks')
+        week = st.selectbox('Select Week', ['Week 1-7', 'Week 8', 'Week 9', 'Week 10', 'Week 11', 'Week 12', 'Week 13'], key='Weeks')
 
         diary.diary(week)
 

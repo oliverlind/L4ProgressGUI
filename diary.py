@@ -134,5 +134,24 @@ def diary(week):
         layout_tools.centre_image(
             'Plots/5 Atom System/Correlations/Correlation function/With atom 1/q1_D=31.8_g(1,i).png', title=r'$\Delta$ = $V_{i,i+1}$ = 31.8 MHz / 2$\pi$')
 
+    if week == 'Week 13':
 
+        st.write('This week we carried on our analysis of the correlation function. We looked at how varying the duration and hence the speed of the quench effected the strength and the range of correlations throughout the system.')
 
+        st.write('In the graphs below we plot the average of the modulus of the correlation function between quench site at atom 1 and atom i for different quench speeds. This corresponds to:')
+
+        st.latex(r'\langle  G(1, j)\rangle_{t} = \langle\langle n_{i}n_{j} \rangle  - \langle n_{i}n_{j} \rangle\rangle_{t}')
+
+        st.write('The first graph is the average of correlation taken 2 microseconds after the quench and the second is for 4 microseconds after the quench. The legend labels should also be corrected in order to include averages symbol.')
+
+        st.write('The results imply that faster quenches result in stronger correlations on all atom sites as all correlations between pairs increase with decreasing t_quench. By looking at the average correlation between atom 1 and 7, we can see that a quench of a fast enough speed is needed in order to get a long-range correlation between the atoms. It would be interesting to extend this graph and see if the correlation of atom 1 and 6 also drops to 0 for a slow enough quench. Alternatively, is there a threshold value for average correlation between atom 1 and the rest at which all atoms reached based on the entangled ground state of the system? A next step then could be to work out the ground state correlations and check if the system tends to these values.')
+
+        layout_tools.centre_image('Plots/7 Atom System/Quench 1st Atom/Correlation Function/mod(g(1,i))_20step_intervals.png')
+
+        layout_tools.centre_image('Plots/7 Atom System/Quench 1st Atom/Correlation Function/mod(g(1,i))_20step_intervals_4micros.png')
+
+        st.write('In may seem obvious from an eigenenergies perspective that this is the behaviour you would expect. A faster quench puts more energy with a greater spread into the system resulting in the state of the system being spread across multiple eigenstates. This superposition of eigenstates results in entanglement between pairs of atoms and hence the strong correlations we see. What is interesting is how this correlations scale with the speed of the quench, is it linear? Moreover, how the range of the of correlations scale with the speed of the quench, is the a threshold speed needed in order to get atom 1 and 7 correlated.')
+
+        st.write('Moving forward, it would be interesting to see how the speed of the quench relates to the spread of expectation energy and if the is a way to relate this to the spreading and increase of correlations we see from faster quenches.')
+
+        st.write('Moreover, similar to what is done in this following paper: https://arxiv.org/pdf/2003.10106.pdf it will also be interesting to look at ways of quantifying the speed of entanglement throughout our system.')
