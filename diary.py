@@ -1,5 +1,6 @@
 import streamlit as st
 import layout_tools
+import read_docx
 
 def diary(week):
 
@@ -140,7 +141,7 @@ def diary(week):
 
         st.write('In the graphs below we plot the average of the modulus of the correlation function between quench site at atom 1 and atom i for different quench speeds. This corresponds to:')
 
-        st.latex(r'\langle  G(1, j)\rangle_{t} = \langle\langle n_{i}n_{j} \rangle  - \langle n_{i}n_{j} \rangle\rangle_{t}')
+        st.latex(r'\langle G(1, j)\rangle_{t} = \langle\langle n_{i}n_{j} \rangle  - \langle n_{i}n_{j} \rangle\rangle_{t}')
 
         st.write('The first graph is the average of correlation taken 2 microseconds after the quench and the second is for 4 microseconds after the quench. The legend labels should also be corrected in order to include averages symbol.')
 
@@ -155,3 +156,48 @@ def diary(week):
         st.write('Moving forward, it would be interesting to see how the speed of the quench relates to the spread of expectation energy and if the is a way to relate this to the spreading and increase of correlations we see from faster quenches.')
 
         st.write('Moreover, similar to what is done in this following paper: https://arxiv.org/pdf/2003.10106.pdf it will also be interesting to look at ways of quantifying the speed of entanglement throughout our system.')
+
+    if week == 'Week 14':
+
+        paras = read_docx.read_docx_para("Diary/Week 14.docx")
+
+        '''Intro'''
+
+        layout_tools.write_paragraphs(paras[1:4])
+
+        '''Looking ahead'''
+
+        st.subheader('Looking ahead')
+
+        layout_tools.write_paragraphs(paras[5:7])
+
+        '''Results'''
+
+        st.subheader('Results')
+
+        st.write("**Energy Spreading**")
+
+        layout_tools.write_paragraphs([paras[9]])
+
+        layout_tools.centre_image('Plots/Energy Spreading/Expectation Energy/3 atom.png')
+
+        layout_tools.centre_image('Plots/Energy Spreading/Expectation Energy/5 atom.png')
+
+        layout_tools.write_paragraphs([paras[10]])
+
+        layout_tools.centre_image('Plots/Energy Spreading/t=<2secs_sites_3_5_7.png')
+
+        layout_tools.write_paragraphs([paras[11]])
+
+
+        st.write('**Correlation propagation**')
+
+        layout_tools.write_paragraphs(paras[13:15])
+
+
+
+
+
+
+
+

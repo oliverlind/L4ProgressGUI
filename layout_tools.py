@@ -16,3 +16,7 @@ def centre_image(path, title=None):
 
     with col3:
         st.write("")
+
+def write_paragraphs(paras):
+    for para in paras:
+        st.write(para)
