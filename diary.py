@@ -194,6 +194,29 @@ def diary(week):
 
         layout_tools.write_paragraphs(paras[13:15])
 
+    if week == 'Week 15':
+        pass
+
+    if week == 'Week 16':
+
+        with open('Diary/Week 16 copy.pdf', "rb") as pdf_file:
+            PDFbyte = pdf_file.read()
+
+        container = st.container(border=True)
+
+        container.write('**Handwritten notes of some general ideas / analysis for this week**')
+        container.download_button(label="Week 16 notes",
+                               data=PDFbyte,
+                               file_name="W16_notes.pdf",
+                               mime='application/octet-stream')
+
+        paras = read_docx.read_docx_para("Diary/Week 16.docx")
+        layout_tools.write_paragraphs(paras[1:])
+
+
+
+        #st.download_button(label='Week 16 Notes', data=, )
+
 
 
 
