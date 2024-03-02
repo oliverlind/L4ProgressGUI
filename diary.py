@@ -4,10 +4,10 @@ import read_docx
 
 def diary(week):
 
-    if week == 'Week 1-7':
+    if week == 'Week 1-8':
         st.write('See joint group QSim teams for progress and reflections')
 
-    if week == 'Week 8':
+    if week == 'Week 9':
 
         st.write('Alongside investigating further, the dynamics of the local quench, this week I had a look at some '
                  'applications of single addressing lasers on our atoms. One notable application I came across was '
@@ -51,7 +51,7 @@ def diary(week):
 
     if week == 'Week 10':
 
-        st.write('After last week’s results, I am finding that the interesting thing about this system is how '
+        st.write('I am finding that the interesting thing about this system is how '
                  'entanglement and correlations propagate through the system after a quench. This lead me to a few '
                  'papers looking at quasiparticle like propagation in Isling chains and the Lieb-Robinson bound.')
 
@@ -64,8 +64,6 @@ def diary(week):
                  'some sort of entanglement propagating through the system.')
 
         layout_tools.centre_image('Plots/7 Atom System/Quench 1st Atom/Entanglement Entropys/7_D=200_entanglement_entropy.png')
-
-        st.write('The papers I have found interesting are...')
 
     if week == 'Week 11':
 
@@ -217,7 +215,19 @@ def diary(week):
 
         #st.download_button(label='Week 16 Notes', data=, )
 
+    if week == 'Week 17':
+        paras = read_docx.read_docx_para("Diary/Week 17.docx")
+        layout_tools.write_paragraphs(paras[1:])
 
+        video_file = open('Plots/Animations /Vol vs Area law/7 atom.mp4', 'rb')
+        video_file2 = open('Plots/Animations /Vol vs Area law/7 atom 6 microseconds.mp4', 'rb')
+        video_bytes = video_file.read()
+        video_bytes2 = video_file2.read()
+
+        st.video(video_bytes)
+
+        st.write('Animation run for slightly longer:')
+        st.video(video_bytes2)
 
 
 
