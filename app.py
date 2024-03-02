@@ -70,7 +70,7 @@ def main_ui():
         st.divider()
         st.subheader('Project Diary')
         weeks_list = ['Week 1-8', 'Week 9', 'Week 10', 'Week 11', 'Week 12', 'Week 13',
-                                            'Week 14', 'Week 15', 'Week 16', 'Week 17']
+                                            'Week 14', 'Week 15', 'Week 16', 'Week 17', 'Week 18']
         week = st.selectbox('Select Week', reversed(weeks_list), key='Weeks')
 
         diary.diary(week)
