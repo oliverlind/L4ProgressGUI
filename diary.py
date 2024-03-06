@@ -229,6 +229,22 @@ def diary(week):
         st.write('Animation run for slightly longer:')
         st.video(video_bytes2)
 
+    if week == 'Week 18':
+
+        with open('Diary/Week 18.pdf', "rb") as pdf_file:
+            PDFbyte = pdf_file.read()
+
+        container = st.container(border=True)
+
+        container.write('**Handwritten notes of some general ideas / analysis for meeting this week**')
+        container.download_button(label="Week 18 notes",
+                               data=PDFbyte,
+                               file_name="W18_notes.pdf",
+                               mime='application/octet-stream')
+
+        paras = read_docx.read_docx_para("Diary/Week 18.docx")
+        layout_tools.write_paragraphs(paras[1:])
+
 
 
 
