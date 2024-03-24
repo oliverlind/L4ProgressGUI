@@ -155,7 +155,7 @@ def diary(week):
 
         st.write('Moreover, similar to what is done in this following paper: https://arxiv.org/pdf/2003.10106.pdf it will also be interesting to look at ways of quantifying the speed of entanglement throughout our system.')
 
-    if week == 'Week 14':
+    if week == 'Week 14-15':
 
         paras = read_docx.read_docx_para("Diary/Week 14.docx")
 
@@ -191,9 +191,6 @@ def diary(week):
         st.write('**Correlation propagation**')
 
         layout_tools.write_paragraphs(paras[13:15])
-
-    if week == 'Week 15':
-        pass
 
     if week == 'Week 16':
 
@@ -243,6 +240,21 @@ def diary(week):
                                mime='application/octet-stream')
 
         paras = read_docx.read_docx_para("Diary/Week 18.docx")
+        layout_tools.write_paragraphs(paras[1:])
+
+    if week == 'Week 19':
+        with open('Diary/Strathclyde presentation Oliver.pdf', "rb") as pdf_file:
+            PDFbyte = pdf_file.read()
+
+        container = st.container(border=True)
+
+        container.write('**Strathclyde presentation on recent local quench results**')
+        container.download_button(label="Strathclyde presentation",
+                                  data=PDFbyte,
+                                  file_name='Diary/Strathclyde presentation Oliver.pdf',
+                                  mime='application/octet-stream')
+
+        paras = read_docx.read_docx_para("Diary/Week 19.docx")
         layout_tools.write_paragraphs(paras[1:])
 
 
