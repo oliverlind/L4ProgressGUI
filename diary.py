@@ -251,7 +251,7 @@ def diary(week):
         container.write('**Strathclyde presentation on recent local quench results**')
         container.download_button(label="Strathclyde presentation",
                                   data=PDFbyte,
-                                  file_name='Diary/Strathclyde presentation Oliver.pdf',
+                                  file_name='Strathclyde presentation Oliver.pdf',
                                   mime='application/octet-stream')
 
         paras = read_docx.read_docx_para("Diary/Week 19.docx")

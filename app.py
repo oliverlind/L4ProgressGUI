@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 
+import layout_tools
 import plots
 import diary
 
@@ -24,7 +25,7 @@ def main_ui():
     with st.sidebar:
         st.header('1D Arrays Rydberg Atom Arrays')
         st.image('Diagrams/Atom Chain Set Up with Lasers.png')
-        option = st.selectbox('Select Option', ['Intro', 'Diary', 'Code', 'Papers', 'Interim Report', 'Presentation', 'Final Report'], )
+        option = st.selectbox('Select Option', ['Intro', 'Diary', 'Code', 'Reports', 'Presentations'], )
 
     if option == 'Intro':
         st.subheader('Introduction')
@@ -47,7 +48,14 @@ def main_ui():
                  "https://github.com/oliverlind/RydbergQubit.")
 
     if option == 'Code':
+        st.divider()
         st.subheader("Code set up")
+        st.write('Structure of the python code is as follows')
+
+        layout_tools.centre_image('Diagrams/Code_set_up.png')
+
+        st.write("The code for the project can be accessed through my GitHub via the link: "
+                 "https://github.com/oliverlind/RydbergQubit.")
 
         # st.write(" The code for 1D atom arrays as follows:")
         #
@@ -74,6 +82,59 @@ def main_ui():
         week = st.selectbox('Select Week', reversed(weeks_list), key='Weeks')
 
         diary.diary(week)
+
+    if option == 'Reports':
+        st.subheader('Reports')
+
+        with open('Reports and presentations/Oliver Lind L4 Report.pdf', "rb") as pdf_file:
+            PDFbyte = pdf_file.read()
+
+        container = st.container(border=True)
+
+        container.write('**Final Report**')
+        container.download_button(label="OL Final Report",
+                                  data=PDFbyte,
+                                  file_name='Oliver Lind L4 Report.pdf',
+                                  mime='application/octet-stream')
+
+        with open('Reports and presentations/L4_Formative_Progress_Report two col.pdf', "rb") as pdf_file:
+            PDFbyte = pdf_file.read()
+
+        container = st.container(border=True)
+
+        container.write('**Interim Report**')
+        container.download_button(label="OL Interim Report",
+                                  data=PDFbyte,
+                                  file_name='OL Interim Report.pdf',
+                                  mime='application/octet-stream')
+
+    if option == 'Presentations':
+        st.subheader('Presentations')
+
+        with open('Reports and presentations/L4 Presentation.pdf', "rb") as pdf_file:
+            PDFbyte = pdf_file.read()
+
+        container = st.container(border=True)
+
+        container.write('**L4 seminar presentation**')
+        container.download_button(label="L4 presentation",
+                                  data=PDFbyte,
+                                  file_name='L4 presentation OL.pdf',
+                                  mime='application/octet-stream')
+
+        with open('Diary/Strathclyde presentation Oliver.pdf', "rb") as pdf_file:
+            PDFbyte = pdf_file.read()
+
+        container = st.container(border=True)
+
+        container.write('**Strathclyde presentation on recent local quench results**')
+        container.download_button(label="Strathclyde presentation",
+                                  data=PDFbyte,
+                                  file_name='Strathclyde presentation OL.pdf',
+                                  mime='application/octet-stream')
+
+
+
 
 
 
